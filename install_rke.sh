@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Install latest version of rke
-which curl &> /dev/null || apt-get install -y curl || yum install -y curl || dnf install -y curl || (echo "Couldn't install curl" && exit 1)
+which curl &> /dev/null || (apt-get install -y curl || yum install -y curl || dnf install -y curl || (echo "Couldn't install curl" && exit 1))
 
 mkdir -p /usr/local/bin || (echo "Failed to create directory" && exit 1)
 
