@@ -1,0 +1,13 @@
+name: RKE install test
+on: [push, pull_request]
+jobs:
+  unittest:
+    runs-on: ubuntu-18.04
+    name: install
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Actual install
+        run: ./install_rke.sh
+      - name: RKE version check
+        run: rke --version
